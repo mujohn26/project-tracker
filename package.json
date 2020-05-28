@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nyc": {
+    "exclude": [
+      "src/database/*",
+      "src/tests",
+      "src/services"
+    ]
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -49,7 +56,9 @@
     "express": "^4.17.1",
     "express-validator": "^6.4.1",
     "faker": "^4.1.0",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.3.0",
     "node-mocks-http": "^1.8.1",
     "passport-google-oauth20": "^2.0.0",
     "path": "^0.12.7",
