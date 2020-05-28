@@ -14,10 +14,6 @@
 * [PostgreSQL](https://www.postgresql.org/) The World's Most Advanced Open Source Relational Database.
 * [Npm](https://www.npmjs.com/) Used as the package manager for the app. A fast, reliable, and secure dependency management system.
 
-
-### REST API Docs
-The Api documentation is done using swagger. View [Barefoot Nomad API Documentation](https://)
-
 ### JWT Authentication
 The API endpoints are being authenticated using [JWT(Json Web Token)](https://jwt.io/).
 
@@ -29,7 +25,7 @@ The API endpoints are being authenticated using [JWT(Json Web Token)](https://jw
 
 ## Installation and Running the Application
 
-* Clone the repository using: `git clone https://github.com/andela/blackninjas-backend.git`
+* Clone the repository using: `git clone https://github.com/mujohn26/project-tracker.git`
 * Run `npm install` To install the project dependencies
 * Run `sequelize db:migrate` To create all tables by running migrations
 * Run `npm dev-start` To start the application

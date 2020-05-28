@@ -16,12 +16,14 @@ class userController {
       const {
         name,
         body,
-        status
+        status,
+        assignId
       } = req.body;
       const NewProject = {
         name,
         body,
-        status
+        status,
+        assignId
       };
 
       await ProjectServices.CreateProject(NewProject);

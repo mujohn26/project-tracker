@@ -6,8 +6,17 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     userid: DataTypes.STRING
   }, {});
-  user.associate = function () {
-    // associations can be defined here
+  user.associate = (models) => {
+    user.hasMany(models.project, {
+      foreignKey: 'assignId',
+      onDelete: 'cascade',
+      onUpdate: 'cascade'
+    });
+    user.hasMany(models.task, {
+      foreignKey: 'assignId',
+      onDelete: 'cascade',
+      onUpdate: 'cascade'
+    });
   };
   return user;
 };
