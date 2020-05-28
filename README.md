@@ -35,12 +35,8 @@ The API endpoints are being authenticated using [JWT(Json Web Token)](https://jw
 * Run `npm dev-start` To start the application
 * Run `npm test` to run test
 
-## Contributors
+## Developer
 * [John MUGIRANEZA](https://github.com/mujohn26)
-* [Eric SHEMA](https://github.com/userName)
-* [Jordan KAYINAMURA](https://github.com/userName)
-* [Benit HAVUGIMANA](https://github.com/userName)
-* [Dominique NSENGIMANA](https://github.com/userName)
 
 
 ## License
