@@ -26,3 +26,27 @@ export const validateUser = (req, res, next) => {
   }
   next();
 };
+
+/**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns {*} next
+ */
+export const validateProject = (req, res, next) => {
+  const schema = {
+    name: Joi.string().alphanum().required(),
+    body: Joi.string().required(),
+    status: Joi.string().required(),
+  };
+  const result = Joi.validate(req.body, schema);
+  if (result.error !== null) {
+    return response.errorMessage(
+      res,
+      result.error.details[0].message,
+      400,
+    );
+  }
+  next();
+};
