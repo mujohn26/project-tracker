@@ -27,4 +27,13 @@ describe('user tests', () => {
         done();
       });
   });
+  it('get users', (done) => {
+    chai.request(app).get('/api/users/?filterBy=surname&order=ASC&page=1')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.an('object');
+        chai.expect(res.body.message).to.eq('user returned successfully');
+        done();
+      });
+  });
 });
