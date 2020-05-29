@@ -1,5 +1,6 @@
 import UserServices from '../services/user.service';
 import response from '../helpers/response.helper';
+import Paginate from '../helpers/paginate.helper';
 
 /**
  * Class for users related operations such creating users and getting users
@@ -15,12 +16,12 @@ class userController {
     try {
       const {
         name,
-        username,
+        surname,
         email
       } = req.body;
       const NewUser = {
         name,
-        username,
+        surname,
         email
       };
       await UserServices.CreateUser(NewUser);
@@ -30,6 +31,33 @@ class userController {
         'user was created successfully',
         201,
         NewUser
+      );
+    } catch (e) {
+      return response.errorMessage(
+        res,
+        e.message,
+        500,
+      );
+    }
+  }
+
+  /**
+   * get user data from database
+   * @param {Object} req The request object
+   * @param {Object} res The response object
+   * @returns {Object} returns user datas
+   */
+  static async getUser(req, res) {
+    try {
+      const { page, filterBy, order } = req.query;
+      const limit = req.query.limit || 10;
+      const offset = Paginate(page, limit);
+      const users = await UserServices.getUsers(limit, offset, filterBy, order);
+      response.successMessage(
+        res,
+        'user returned successfully',
+        200,
+        users
       );
     } catch (e) {
       return response.errorMessage(

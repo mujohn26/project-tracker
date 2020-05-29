@@ -13,7 +13,7 @@ import response from './response.helper';
 export const validateUser = (req, res, next) => {
   const schema = {
     name: Joi.string().alphanum().required(),
-    username: Joi.string().alphanum().required(),
+    surname: Joi.string().alphanum().required(),
     email: Joi.string().email().required(),
   };
   const result = Joi.validate(req.body, schema);
